@@ -1,1 +1,1 @@
-var start = require('dist/server.js');
+var start = require('./dist/server.js');
