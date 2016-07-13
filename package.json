@@ -1,0 +1,30 @@
+{
+  "name": "base-nodejs-angular-gulp",
+  "version": "0.0.1",
+  "description": "Baseline for development Angular and NodeJS",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smoki99/base-nodejs-angular-gulp.git"
+  },
+  "keywords": [
+    "nodejs",
+    "angular",
+    "gulp",
+    "jade"
+  ],
+  "author": "Christian Mueller",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/smoki99/base-nodejs-angular-gulp/issues"
+  },
+  "homepage": "https://github.com/smoki99/base-nodejs-angular-gulp#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-ts": "^0.3.0",
+    "typescript": "^1.8.10"
+  }
+}
