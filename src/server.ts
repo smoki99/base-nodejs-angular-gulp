@@ -3,6 +3,7 @@
 "use strict";
 
 import * as express from "express";
+import * as path from "path";
 
 class Server {
     public app: express.Application;
@@ -15,7 +16,11 @@ class Server {
     // Start the configuration
     constructor() {
         this.app = express();
-        this.app.get("'/",  (req, res) => {
+
+        this.app.use("/", express.static(path.resolve(__dirname, "views")));
+        this.app.use("/lib", express.static(path.resolve(__dirname, "lib")));
+
+        this.app.get("/Hello",  (req, res) => {
             res.send("Hallo World!");
         });
 

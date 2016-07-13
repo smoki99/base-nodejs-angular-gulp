@@ -1,0 +1,8 @@
+html
+    head
+        script(src="/lib/angular.js")
+        script(src="/lib/demoapp.js")
+    body(ng-app="demoapp" ng-controller="demoCtrl")
+        h1 Hello das ist ein Demo!
+        input(type="text" ng-model="model.test")
+        p {{model.test}}
