@@ -8,9 +8,21 @@
   </head>
   <body ng-app="demoapp" ng-controller="demoCtrl">
     <h1>Dynamisches Beispiel mit Bootstrap</h1>
-        <div class="my-form-inputArea" ng-class="model.test.length&gt;8==undefined ? &quot;&quot; : (model.test.length&gt;8 ? &quot;my-success&quot; : &quot;my-error&quot;)">
-          <label class="my-label">Ihre Eingabe bitte (Mindestens 8 Zeichen)</label>
-          <input class="my-form-control" ng-model="model.test" type="text"/><span class="my-form-inputArea-ok" ng-hide="!(model.test.length&gt;8==undefined||model.test.length&gt;8)"></span><span class="my-form-inputArea-error" ng-hide="model.test.length&gt;8==undefined||model.test.length&gt;8"></span><span class="sr-only"></span>
+        <div class="my-form-inputArea" ng-class="model.vorname.length&gt;4==undefined ? &quot;&quot; : (model.vorname.length&gt;4 ? &quot;my-success&quot; : &quot;my-error&quot;)">
+          <label class="my-label">Vorname</label>
+          <input class="my-form-control" ng-model="model.vorname" type="text"/><span class="my-form-inputArea-ok" ng-hide="!(model.vorname.length&gt;4==undefined||model.vorname.length&gt;4)"></span><span class="my-form-inputArea-error" ng-hide="model.vorname.length&gt;4==undefined||model.vorname.length&gt;4"></span><span class="sr-only"></span>
+        </div>
+        <div class="my-form-inputArea" ng-class="model.nachname.length&gt;4==undefined ? &quot;&quot; : (model.nachname.length&gt;4 ? &quot;my-success&quot; : &quot;my-error&quot;)">
+          <label class="my-label">Nachname</label>
+          <input class="my-form-control" ng-model="model.nachname" type="text"/><span class="my-form-inputArea-ok" ng-hide="!(model.nachname.length&gt;4==undefined||model.nachname.length&gt;4)"></span><span class="my-form-inputArea-error" ng-hide="model.nachname.length&gt;4==undefined||model.nachname.length&gt;4"></span><span class="sr-only"></span>
+        </div>
+        <div class="my-form-inputArea" ng-class="model.strasse.length&gt;8==undefined ? &quot;&quot; : (model.strasse.length&gt;8 ? &quot;my-success&quot; : &quot;my-error&quot;)">
+          <label class="my-label">Straße</label>
+          <input class="my-form-control" ng-model="model.strasse" type="text"/><span class="my-form-inputArea-ok" ng-hide="!(model.strasse.length&gt;8==undefined||model.strasse.length&gt;8)"></span><span class="my-form-inputArea-error" ng-hide="model.strasse.length&gt;8==undefined||model.strasse.length&gt;8"></span><span class="sr-only"></span>
+        </div>
+        <div class="my-form-inputArea" ng-class="model.ort.length&gt;2==undefined ? &quot;&quot; : (model.ort.length&gt;2 ? &quot;my-success&quot; : &quot;my-error&quot;)">
+          <label class="my-label">Ort</label>
+          <input class="my-form-control" ng-model="model.ort" type="text"/><span class="my-form-inputArea-ok" ng-hide="!(model.ort.length&gt;2==undefined||model.ort.length&gt;2)"></span><span class="my-form-inputArea-error" ng-hide="model.ort.length&gt;2==undefined||model.ort.length&gt;2"></span><span class="sr-only"></span>
         </div>
     <p>{{model.test}}</p>
   </body>

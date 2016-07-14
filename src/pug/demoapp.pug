@@ -5,5 +5,8 @@ html
         script(src="/lib/demoapp.js")
     body(ng-app="demoapp" ng-controller="demoCtrl")
         h1 Dynamisches Beispiel mit Bootstrap
-        +inputArea("Ihre Eingabe bitte (Mindestens 8 Zeichen)","model.test","model.test.length>8")
+        +inputArea("Vorname","model.vorname","model.vorname.length>4")
+        +inputArea("Nachname","model.nachname","model.nachname.length>4")
+        +inputArea("Straße","model.strasse","model.strasse.length>8")
+        +inputArea("Ort","model.ort","model.ort.length>2")
         p {{model.test}}
