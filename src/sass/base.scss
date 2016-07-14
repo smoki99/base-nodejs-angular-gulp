@@ -1,0 +1,36 @@
+/* We import bootstrap here */
+// @import "../../dist/css/bootstrap";
+@import "../../node_modules/bootstrap3/dist/css/bootstrap";
+
+.my-form-inputArea {
+    @extend .form-group;
+    @extend .has-feedback;   
+}
+
+.my-success {
+    @extend .has-success;
+}
+
+.my-error {
+    @extend .has-error;
+}
+
+.my-label {
+    @extend .control-label;
+}
+
+.my-form-control {
+    @extend .form-control;
+}
+
+.my-form-inputArea-ok {
+    @extend .glyphicon;
+    @extend .glyphicon-ok;
+    @extend .form-control-feedback;
+}
+
+.my-form-inputArea-error {
+    @extend .glyphicon;
+    @extend .glyphicon-remove;
+    @extend .form-control-feedback;
+}

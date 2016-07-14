@@ -14,9 +14,13 @@ var nodemon = require('gulp-nodemon');
 var notify = require('gulp-notify');
 var livereload = require('gulp-livereload');
 
-gulp.task('default', ['typescript', 'tslint', 'pug'], () => {
+var sass = require('gulp-sass');
+var autoprefixer = require('gulp-autoprefixer');
+
+gulp.task('default', ['typescript', 'tslint', 'pug', 'copy-bootstrap', 'copy-libs', 'styles'], () => {
 	gulp.watch('./src/**/*.ts', ['tslint','typescript']);
     gulp.watch('./src/**/*.pug', ['pug']);
+    gulp.watch('./src/**/*.scss', ['styles']);
 	gulp.watch('./dist/view/**/*.html').on('change', browserSync.reload);
 });
 
@@ -40,7 +44,9 @@ gulp.task("tslint", () =>
 
 // Convert Pug formally known as Jade to html
 gulp.task('pug', () => {
-    gulp.src('src/pug/**/*.pug')
+    gulp.src([
+        'src/pug/**/*.pug','!src/pug/include/**'
+        ])
       .pipe(pug({
           pretty: true
       }))
@@ -50,6 +56,17 @@ gulp.task('pug', () => {
 gulp.task('copy-libs', () => {
     gulp.src('node_modules/angular/angular.js')
         .pipe(gulp.dest('dist/lib'));
+    gulp.src('node_modules/jquery/dist/*.js')
+        .pipe(gulp.dest('dist/lib'));
+});
+
+gulp.task('copy-bootstrap', () => {
+    //gulp.src('node_modules/bootstrap3/dist/css/bootstrap*')
+    //    .pipe(gulp.dest('dist/css'));
+    gulp.src('node_modules/bootstrap3/dist/js/*')
+        .pipe(gulp.dest('dist/lib'));
+    gulp.src('node_modules/bootstrap3/fonts/*')
+        .pipe(gulp.dest('dist/fonts'));
 });
 
 
@@ -68,4 +85,14 @@ gulp.task('webserver', function() {
 			.pipe(livereload())
 			.pipe(notify('Reloading page, please wait...'));
 	})
+});
+
+gulp.task('styles', function() {
+	gulp.src('src/sass/**/*.scss')
+		.pipe(sass().on('error', sass.logError))
+		.pipe(autoprefixer({
+			browsers: ['last 2 versions']
+		}))
+		.pipe(gulp.dest('dist/css'))
+		.pipe(browserSync.stream());
 });

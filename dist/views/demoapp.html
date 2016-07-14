@@ -2,11 +2,16 @@
 <html>
   <head>
     <script src="/lib/angular.js"></script>
+    <script src="/lib/jquery.js"></script>
+    <link rel="stylesheet" href="/css/base.css"/>
     <script src="/lib/demoapp.js"></script>
   </head>
   <body ng-app="demoapp" ng-controller="demoCtrl">
-    <h1>Juhu das ist ein Demo auf Heroku!</h1>
-    <input type="text" ng-model="model.test"/>
+    <h1>Dynamisches Beispiel mit Bootstrap</h1>
+        <div class="my-form-inputArea" ng-class="model.test.length&gt;8==undefined ? &quot;&quot; : (model.test.length&gt;8 ? &quot;my-success&quot; : &quot;my-error&quot;)">
+          <label class="my-label">Ihre Eingabe bitte (Mindestens 8 Zeichen)</label>
+          <input class="my-form-control" ng-model="model.test" type="text"/><span class="my-form-inputArea-ok" ng-hide="!(model.test.length&gt;8==undefined||model.test.length&gt;8)"></span><span class="my-form-inputArea-error" ng-hide="model.test.length&gt;8==undefined||model.test.length&gt;8"></span><span class="sr-only"></span>
+        </div>
     <p>{{model.test}}</p>
   </body>
 </html>

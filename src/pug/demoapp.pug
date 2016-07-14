@@ -1,8 +1,9 @@
 html
     head
-        script(src="/lib/angular.js")
+        include ./include/base.pug
+        include ./include/input.pug
         script(src="/lib/demoapp.js")
     body(ng-app="demoapp" ng-controller="demoCtrl")
-        h1 Juhu das ist ein Demo auf Heroku!
-        input(type="text" ng-model="model.test")
+        h1 Dynamisches Beispiel mit Bootstrap
+        +inputArea("Ihre Eingabe bitte (Mindestens 8 Zeichen)","model.test","model.test.length>8")
         p {{model.test}}

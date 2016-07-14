@@ -19,6 +19,8 @@ class Server {
 
         this.app.use("/", express.static(path.resolve(__dirname, "views")));
         this.app.use("/lib", express.static(path.resolve(__dirname, "lib")));
+        this.app.use("/css", express.static(path.resolve(__dirname, "css")));
+        this.app.use("/fonts", express.static(path.resolve(__dirname, "fonts")));
 
         this.app.get("/Hello",  (req, res) => {
             res.send("Hallo World!");

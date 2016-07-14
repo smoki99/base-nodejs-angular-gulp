@@ -8,6 +8,8 @@ var Server = (function () {
         this.app = express();
         this.app.use("/", express.static(path.resolve(__dirname, "views")));
         this.app.use("/lib", express.static(path.resolve(__dirname, "lib")));
+        this.app.use("/css", express.static(path.resolve(__dirname, "css")));
+        this.app.use("/fonts", express.static(path.resolve(__dirname, "fonts")));
         this.app.get("/Hello", function (req, res) {
             res.send("Hallo World!");
         });

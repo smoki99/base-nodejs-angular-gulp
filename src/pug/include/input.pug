@@ -1,0 +1,7 @@
+mixin inputArea(label, modelname, formula)
+  .my-form-inputArea(ng-class=formula+'==undefined ? "" : ('+formula+' ? "my-success" : "my-error")')
+    label.my-label #{label}
+    input.my-form-control(ng-model=modelname,type='text')
+    span.my-form-inputArea-ok(ng-hide='!('+formula+"==undefined||"+formula+')')
+    span.my-form-inputArea-error(ng-hide=formula+'==undefined||'+formula)
+    span.sr-only
